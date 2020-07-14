@@ -6,7 +6,16 @@
 </head>
 <body>
 <script>
-
+function computerPlay()  {
+    let play = Math.floor(Math.random() * 3) + 1;
+   if (play === 1) {
+       return 'rock'; 
+       } else if (play === 2) {
+           return 'paper';
+       } else if (play === 3){
+           return 'scissors';
+       }
+}
 </script>
 </body>
 </html>

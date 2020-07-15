@@ -16,18 +16,22 @@ function computerPlay()  {
            return 'scissors';
        }
 }
-function playRound(playerSelection/*, computerSelection*/) {
-    let rock = /rock/i;
-    let paper = /paper/i;
-    let scissors = /scissors/i;
+function playRound(playerSelection, computerSelection) {
+   // let rock = /rock/i;
+   //let paper = /paper/i;
+   // let scissors = /scissors/i;
+   let player = [/rock/i, /paper/i, /scissors/i];
     computerSelection = computerPlay();
+    let result = [' YOU WIN!', ' YOU LOSE!', ' YOU TIE!'];
+    let choice = ['Rock', 'Paper', 'Scissors'];
+    let action = [' breaks ', ' covers ', ' cuts '];
     //return computerSelection;
-    if (playerSelection = rock && computerSelection == 'paper') {
-        return "Paper covers rock-- YOU LOSE!"; 
+    if (playerSelection = player[0] && computerSelection == 'paper') {
+        return choice[1] + action[1] + choice[0] + "!" + result[1]; 
         } else if (computerSelection == 'scissors') {
-            return "Rock breaks scissors-- YOU WIN!";
+        return choice[0] + action[0] + choice[2] + "!" + result[0];
         } else if (computerSelection == 'rock') {
-            return "Rock rocks rock-- YOU TIE!"
+        return choice[0] + action[0] + choice[0] + "!" + result[2];
         }
 }
 //const playerSelection = 'rock';

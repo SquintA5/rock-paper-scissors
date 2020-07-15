@@ -16,13 +16,19 @@ function computerPlay()  {
            return 'scissors';
        }
 }
-function playRound(playerSelection) {
+function playRound(playerSelection/*, computerSelection*/) {
     let rock = /rock/i;
-    //const computerSelection = new computerPlay();
-    if (playerSelection = rock) {
-    return "YOU SUCK";
-    
-    }
+    let paper = /paper/i;
+    let scissors = /scissors/i;
+    computerSelection = computerPlay();
+    //return computerSelection;
+    if (playerSelection = rock && computerSelection == 'paper') {
+        return "Paper covers rock-- YOU LOSE!"; 
+        } else if (computerSelection == 'scissors') {
+            return "Rock breaks scissors-- YOU WIN!";
+        } else if (computerSelection == 'rock') {
+            return "Rock rocks rock-- YOU TIE!"
+        }
 }
 //const playerSelection = 'rock';
 //const computerSelection = computerPlay();

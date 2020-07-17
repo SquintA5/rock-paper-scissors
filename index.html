@@ -47,6 +47,17 @@ function playRound (playerSelection, computerSelection) {
         }
     }
 }
+function game() {
+    playerSelection = prompt(`Enter 'rock', 'paper', or 'scissors'.`);
+    computerSelection = computerPlay();
+    let round = 0
+   //need to figure out how to count the rounds, wins, and losses
+    console.log(playRound(playerSelection, computerSelection));
+    if (round == 5) {
+        return round;
+    }
+
+}
 </script>
 </body>
 </html>

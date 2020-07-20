@@ -19,21 +19,23 @@ function computerPlay()  {
 function playRound (playerSelection, computerSelection) {
     computerSelection = computerPlay();
     let player = playerSelection.toLowerCase();
-    let choice = ['rock', 'paper', 'scissors'];
-    let result = [' YOU WIN!', ' YOU LOSE!', ' YOU TIE!'];
-    if (player == choice[0]) {
+    if (player == 'rock') {
         if (computerSelection == 'scissors') {
-            return 'Rock breaks scissors!' + result[0];
+            win++;
+            return 'Rock breaks scissors! YOU WIN!';
         } else if (computerSelection == 'paper') {
+            lose++;
             return 'Paper covers rock! YOU LOSE!';
         } else if (computerSelection == 'rock') {
             return 'Rock rocks rock! YOU TIE!';
         }
     }
     if (player == 'paper') {
-        if (computerSelection == choice[0]) {
+        if (computerSelection == 'rock') {
+            win++;
             return 'Paper covers rock! YOU WIN!';
         } else if (computerSelection == 'scissors') {
+            lose++;
             return 'Scissors cuts paper! YOU LOSE!';
         } else if (computerSelection == 'paper') {
             return 'Paper papers paper! YOU TIE!'
@@ -41,26 +43,34 @@ function playRound (playerSelection, computerSelection) {
     }
     if (player == 'scissors') {
         if (computerSelection == 'paper') {
+            win++;
             return 'Scissors cuts paper! YOU WIN!';
         } else if (computerSelection == 'rock') {
+            lose++;
             return 'Rock breaks scissors! YOU LOSE!';
         } else if (computerSelection == 'scissors') {
             return "Scissors scissor scissors! YOU TIE!";
         }
     }
 }
+let win = 0;
+let lose = 0;
+
 function game() {
-  //playerSelection = prompt(`Enter 'rock', 'paper', or 'scissors'.`);
-  //computerSelection = computerPlay();
     let round = 0;
-   //need to figure out how to count the rounds, wins, and losses
     while (round < 5) {
     playerSelection = prompt(`Enter 'rock', 'paper', or 'scissors'.`);
     computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
     round++;
     }
-    return round;
+    if (win > lose) {
+        return "Match winner!";
+    } else if (lose > win) {
+        return "Match loser!";
+    } else if (win == lose) {
+        return "Match tie!";
+    }
 }
 </script>
 </body>
